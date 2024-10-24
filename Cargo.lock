@@ -102,11 +102,15 @@ name = "dokan"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "dokan_cli",
 ]
 
 [[package]]
 name = "dokan_cli"
 version = "0.1.0"
+dependencies = [
+ "clap",
+]
 
 [[package]]
 name = "dokan_manager"

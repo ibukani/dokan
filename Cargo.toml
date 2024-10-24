@@ -6,6 +6,7 @@ description = "project folder magement cli"
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
+dokan_cli = { path = "dokan_cli" }
 
 [workspace]
 members = ["dokan_cli", "dokan_manager"]
