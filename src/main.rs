@@ -1,3 +1,16 @@
+mod command;
+
+use clap::{Parser};
+use crate::command::Commands;
+
+#[derive(Parser)]
+#[command(version, about)]
+struct Args {
+    #[command(subcommand)]
+    command: Commands
+}
+
+
 fn main() {
-    println!("Hello, world!");
+    let _ = Args::parse();
 }
