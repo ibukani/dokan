@@ -1,3 +1,5 @@
+pub mod add;
+
 use clap::Subcommand;
 
 #[derive(Subcommand)]
