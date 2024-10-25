@@ -1,5 +1,5 @@
 [package]
-name = "dokan_manager"
+name = "dokan_project_manager"
 version = "0.1.0"
 edition = "2021"
 
