@@ -1,8 +1,12 @@
 [package]
-name = "dokan"
+name = "dokan-cli"
 version = "0.1.0"
 edition = "2021"
 description = "project folder magement cli"
+
+[[bin]]
+name = "dokan"
+path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
