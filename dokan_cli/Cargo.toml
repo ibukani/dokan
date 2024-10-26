@@ -5,3 +5,5 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
+normpath = "1.3"
+dokan_project_manager = { path = "../dokan_project_manager" }
