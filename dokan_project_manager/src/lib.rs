@@ -1,8 +1,8 @@
 mod config;
 mod project;
 
-use crate::project::Project;
 use crate::config::ConfigFile;
+use crate::project::Project;
 
 pub fn project_list() -> Vec<Project> {
     let config_file = ConfigFile::load_or_create(Default::default());
