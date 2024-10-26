@@ -3,7 +3,7 @@ mod project;
 
 use crate::config::ConfigFile;
 use crate::project::Project;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 pub fn project_list() -> Vec<Project> {
     let config_file = ConfigFile::load_or_create(Default::default());

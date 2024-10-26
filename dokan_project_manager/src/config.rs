@@ -26,10 +26,7 @@ impl ConfigFile {
 
         match fs::read_to_string(&config_path) {
             Ok(file_data) => {
-                let loaded_data: ConfigData = match toml::from_str(file_data.as_str()) {
-                    Ok(data) => data,
-                    Err(_) => default_data,
-                };
+                let loaded_data: ConfigData = toml::from_str(file_data.as_str()).unwrap_or_else(|_| default_data);
 
                 ConfigFile {
                     path: config_path,
