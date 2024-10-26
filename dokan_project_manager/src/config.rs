@@ -82,11 +82,14 @@ impl ConfigFile {
 
 impl ConfigData {
     pub fn get_projects(&self) -> Vec<Project> {
-        self.projects.clone()
-            .unwrap_or_default()
-            .values()
-            .map(|project| project.clone())
-            .collect()
+        match &self.projects {
+            None => {
+                vec![]
+            }
+            Some(map) => {
+                map.values().cloned().collect()
+            }
+        }
     }
 
     pub fn add_project(&mut self, project: Project) {

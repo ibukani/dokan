@@ -2,7 +2,6 @@ mod config;
 mod project;
 
 use crate::project::Project;
-use serde::{Deserialize, Serialize};
 use crate::config::ConfigFile;
 
 pub fn project_list() -> Vec<Project> {
