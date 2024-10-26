@@ -19,11 +19,17 @@ pub(crate) enum Commands {
 
 #[derive(Debug, Args)]
 pub(crate) struct ListArgs {
-    #[arg(short, long)]
-    pub(crate) path: Option<bool>,
+    #[arg(short = 'n', long, default_value = "true", help = "show project name")]
+    pub(crate) name: bool,
 
-    #[arg(short = 'a', long)]
-    pub(crate) all: Option<bool>,
+    #[arg(short = 'p', long, default_value = "false" ,help = "show project path")]
+    pub(crate) path: bool,
+
+    #[arg(short = 't', long, default_value = "false", help = "show project timestamp")]
+    pub(crate) timestamp: bool,
+
+    #[arg(short = 'a', long, default_value = "false", help = "show all project information")]
+    pub(crate) all: bool,
 }
 
 #[derive(Debug, Args)]
