@@ -10,6 +10,11 @@ pub enum ProjectAddError {
     AlreadyExists,
 }
 
+#[derive(Debug)]
+pub enum ProjectRemoveError {
+    NotFound,
+}
+
 pub fn project_list() -> Vec<Project> {
     let config_file = ConfigFile::load_or_create(Default::default());
     config_file.data.get_projects()
@@ -30,8 +35,16 @@ pub fn add_project(file_path: PathBuf) -> Result<Project, ProjectAddError> {
     Ok(project)
 }
 
-pub fn remove_project(project_name: &str) {
+pub fn remove_project(project_name: &str) -> Result<(), ProjectRemoveError> {
     let mut config_file = ConfigFile::load_or_create(Default::default());
+
+    // check if project exists
+    if !config_file.data.project_exists(project_name) {
+        return Err(ProjectRemoveError::NotFound);
+    }
+
     config_file.data.remove_project(project_name);
     config_file.save();
+
+    Ok(())
 }
