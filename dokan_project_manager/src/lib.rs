@@ -1,9 +1,9 @@
 mod config;
 mod project;
 
-use std::path::{Path, PathBuf};
 use crate::config::ConfigFile;
 use crate::project::Project;
+use std::path::{Path, PathBuf};
 
 pub fn project_list() -> Vec<Project> {
     let config_file = ConfigFile::load_or_create(Default::default());
@@ -12,9 +12,7 @@ pub fn project_list() -> Vec<Project> {
 
 pub fn add_project(file_path: PathBuf) -> Project {
     let mut config_file = ConfigFile::load_or_create(Default::default());
-    let project = Project {
-        path: file_path,
-    };
+    let project = Project { path: file_path };
 
     config_file.data.add_project(project.clone());
     config_file.save();

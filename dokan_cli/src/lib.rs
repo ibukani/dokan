@@ -5,8 +5,8 @@ use crate::command::Commands;
 use clap::Parser;
 use std::process::ExitCode;
 
-pub(crate) mod util;
 pub mod command;
+pub(crate) mod util;
 
 #[derive(Debug, Parser)]
 #[command(version, about)]

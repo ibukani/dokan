@@ -1,7 +1,7 @@
 use crate::util::path_resolver::PathResolver;
+use dokan_project_manager::add_project;
 use normpath::PathExt;
 use std::path::PathBuf;
-use dokan_project_manager::add_project;
 
 pub fn add(path_buf: PathBuf) {
     let path_buf = PathResolver::new().resolve(path_buf);
@@ -14,7 +14,10 @@ pub fn add(path_buf: PathBuf) {
     };
 
     if !normalized_path.exists() {
-        eprintln!("Path does not exist: {}", normalized_path.as_path().to_str().unwrap());
+        eprintln!(
+            "Path does not exist: {}",
+            normalized_path.as_path().to_str().unwrap()
+        );
         return;
     }
 
