@@ -6,7 +6,7 @@ use dokan_project_manager::add_project;
 pub fn add(path_buf: PathBuf) {
     let path_buf = PathResolver::new().resolve(path_buf);
     let normalized_path = match path_buf.normalize() {
-        Ok(path) => path,
+        Ok(path) => path.into_path_buf(),
         Err(e) => {
             eprintln!("Failed to normalize path: {}", e);
             return;
@@ -18,6 +18,6 @@ pub fn add(path_buf: PathBuf) {
         return;
     }
 
-    add_project(path_buf.to_str().unwrap());
-    println!("Project added successfully. path: {}", normalized_path.as_path().to_str().unwrap());
+    let project = add_project(normalized_path);
+    println!("Project added successfully. path: {}", project.get_path());
 }
