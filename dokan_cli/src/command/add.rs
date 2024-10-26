@@ -21,6 +21,12 @@ pub fn add(path_buf: PathBuf) {
         return;
     }
 
-    let project = add_project(normalized_path);
-    println!("Project added successfully. path: {}", project.get_path());
+    match add_project(normalized_path) {
+        Ok(project) => {
+            println!("Project added successfully. path: {}", project.get_path());
+        }
+        Err(e) => {
+            eprintln!("Failed to add project: {:?}", e);
+        }
+    }
 }

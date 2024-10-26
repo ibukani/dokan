@@ -83,6 +83,13 @@ impl ConfigData {
         }
     }
 
+    pub fn project_exists(&self, project_name: &str) -> bool {
+        match &self.projects {
+            None => false,
+            Some(map) => map.contains_key(project_name),
+        }
+    }
+
     pub fn add_project(&mut self, project: Project) {
         self.projects
             .get_or_insert(HashMap::new())
