@@ -7,13 +7,13 @@ use std::path::PathBuf;
 
 #[derive(Debug, Subcommand)]
 pub(crate) enum Commands {
-    #[command(about = "print list of project folder")]
+    #[command(alias = "ls", about = "print list of project folder")]
     List(ListArgs),
-    #[command(about = "add project")]
+    #[command(alias = "a",about = "add project")]
     Add(AddArgs),
-    #[command(about = "remove project")]
+    #[command(alias = "r" ,about = "remove project")]
     Remove(RemoveArgs),
-    #[command(about = "change directory to project folder")]
+    #[command(alias = "j", about = "change directory to project folder")]
     Jump,
 }
 
