@@ -17,7 +17,7 @@ struct Args {
 
 pub fn run() -> ExitCode {
     match Args::parse().command {
-        Commands::List(_args) => list(),
+        Commands::List(args) => list(args),
         Commands::Add(args) => add(args.path),
         Commands::Remove(args) => remove(args.name),
         _ => {}

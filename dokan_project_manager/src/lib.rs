@@ -1,5 +1,5 @@
 mod config;
-mod project;
+pub mod project;
 
 use crate::config::ConfigFile;
 use crate::project::Project;
