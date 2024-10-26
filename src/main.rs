@@ -1,5 +1,5 @@
 use dokan_cli::run;
 
-fn main()  {
+fn main() {
     run();
 }
