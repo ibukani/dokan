@@ -1,9 +1,8 @@
-use std::time::SystemTime;
 use anstyle::AnsiColor;
 use chrono::Utc;
 use dokan_project_manager::project::Project;
 
-#[derive(Debug, Default)]
+#[derive(Debug)]
 pub struct ViewSetting {
     pub(crate) name: bool,
     pub(crate) folder: bool,
