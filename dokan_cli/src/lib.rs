@@ -15,7 +15,7 @@ struct Args {
     command: Commands,
 }
 
-pub fn run() -> ExitCode {
+pub fn run_dokan() -> ExitCode {
     match Args::parse().command {
         Commands::List(args) => list(args),
         Commands::Add(args) => add(args.path),

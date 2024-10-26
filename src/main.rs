@@ -1,5 +1,5 @@
-use dokan_cli::run;
+use dokan_cli::run_dokan;
 
 fn main() {
-    run();
+    run_dokan();
 }
