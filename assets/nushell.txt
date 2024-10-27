@@ -1,5 +1,4 @@
-
 # Custom commands for Nushell
-def --env custom-cd [dir: string] {
-	cd $dir
+def --env dokan [...args: string] {
+	dokan $args
 }

@@ -3,7 +3,7 @@ pub mod list;
 pub mod remove;
 pub mod cd;
 
-use clap::{Args, Parser, Subcommand};
+use clap::{Args, Subcommand};
 use std::path::PathBuf;
 
 #[derive(Debug, Subcommand)]

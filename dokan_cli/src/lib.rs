@@ -10,7 +10,7 @@ pub mod command;
 pub(crate) mod util;
 
 #[derive(Debug, Parser)]
-#[command(version, about)]
+#[command(bin_name = "dokan", version, about)]
 struct Args {
     #[command(subcommand)]
     command: Commands,

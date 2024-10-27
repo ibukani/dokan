@@ -3,9 +3,10 @@ name = "dokan-cli"
 version = "0.1.0"
 edition = "2021"
 description = "project folder magement cli"
+default-run = "dokan-cli"
 
 [[bin]]
-name = "dokan"
+name = "dokan-cli"
 path = "src/main.rs"
 
 [[bin]]
