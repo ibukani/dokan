@@ -1,5 +1,6 @@
 mod config;
 pub mod project;
+mod project_list;
 
 use crate::config::ConfigFile;
 use crate::project::Project;
@@ -34,6 +35,13 @@ pub fn update_project_timestamp(project_name: &str) -> Result<(), ProjectRemoveE
     config_file.save();
 
     Ok(())
+}
+
+pub fn get_project(project_name: &str) -> Option<Project> {
+    let config_file = ConfigFile::load_or_create(Default::default());
+    let project_list = config_file.data.get_project_list();
+
+    project_list.get_project(project_name).cloned()
 }
 
 pub fn add_project(file_path: PathBuf) -> Result<Project, ProjectAddError> {

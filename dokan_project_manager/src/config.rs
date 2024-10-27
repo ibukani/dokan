@@ -1,6 +1,4 @@
-mod project_list;
-
-use crate::config::project_list::ProjectList;
+use crate::project_list::ProjectList;
 use directories::ProjectDirs;
 use serde::{Deserialize, Serialize};
 use std::fs;

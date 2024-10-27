@@ -4,6 +4,7 @@ use crate::command::remove::remove;
 use crate::command::Commands;
 use clap::Parser;
 use std::process::ExitCode;
+use crate::command::cd::cd;
 
 pub mod command;
 pub(crate) mod util;
@@ -20,6 +21,7 @@ pub fn run_dokan() -> ExitCode {
         Commands::List(args) => list(args),
         Commands::Add(args) => add(args.path),
         Commands::Remove(args) => remove(args.name),
+        Commands::Cd(args) => cd(args),
         _ => {}
     }
 

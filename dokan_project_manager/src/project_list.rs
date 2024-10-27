@@ -14,6 +14,10 @@ impl ProjectList {
         }
     }
 
+    pub fn get_project(&self, project_name: &str) -> Option<&Project> {
+        self.projects.get(project_name)
+    }
+
     pub fn add_project(&mut self, project: Project) {
         self.projects.insert(project.get_name().to_string(), project);
     }

@@ -1,8 +1,9 @@
 pub mod add;
 pub mod list;
 pub mod remove;
+pub mod cd;
 
-use clap::{Args, Subcommand};
+use clap::{Args, Parser, Subcommand};
 use std::path::PathBuf;
 
 #[derive(Debug, Subcommand)]
@@ -13,8 +14,10 @@ pub(crate) enum Commands {
     Add(AddArgs),
     #[command(alias = "r" ,about = "remove project")]
     Remove(RemoveArgs),
-    #[command(alias = "j", about = "change directory to project folder")]
-    Jump,
+    #[command(alias = "z", about = "change directory to project folder")]
+    Cd(CdArgs),
+    #[command(alias = "j", about = "select project to jump")]
+    Jump( JumpArgs),
 }
 
 #[derive(Debug, Args)]
@@ -42,4 +45,15 @@ pub(crate) struct AddArgs {
 pub(crate) struct RemoveArgs {
     #[arg(index = 1, required = true, help = "project name")]
     pub(crate) name: String,
+}
+
+#[derive(Debug, Args)]
+pub struct CdArgs {
+    #[arg(index = 1, help = "if not specified, open select menu to change directory")]
+    pub(crate) name: String,
+}
+
+#[derive(Debug, Args)]
+pub struct JumpArgs {
+
 }
