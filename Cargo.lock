@@ -193,6 +193,7 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "dokan_cli",
+ "dokan_tool_cli",
 ]
 
 [[package]]
@@ -214,6 +215,13 @@ dependencies = [
  "directories",
  "serde",
  "toml",
+]
+
+[[package]]
+name = "dokan_tool_cli"
+version = "0.1.0"
+dependencies = [
+ "clap",
 ]
 
 [[package]]

@@ -8,9 +8,14 @@ description = "project folder magement cli"
 name = "dokan"
 path = "src/main.rs"
 
+[[bin]]
+name = "dokan-tool"
+path = "src/bin/tool.rs"
+
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
 dokan_cli = { path = "dokan_cli" }
+dokan_tool_cli = { path = "dokan_tool_cli" }
 
 [workspace]
-members = ["dokan_cli", "dokan_project_manager"]
+members = ["dokan_cli", "dokan_project_manager", "dokan_tool_cli"]

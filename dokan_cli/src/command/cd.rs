@@ -1,7 +1,5 @@
-use std::io::{self, Write};
 use crate::command::CdArgs;
 use std::path::Path;
-use std::process::{Command, Stdio};
 
 pub fn cd(args: CdArgs) {
     let project = match dokan_project_manager::get_project(&args.name) {
